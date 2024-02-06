@@ -11,13 +11,12 @@ const routes = [
         component: () => import('../views/HomeView.vue'),
       },
       {
-        path: '/about',
-        name: 'About',
-        component: () => import('../views/AboutView.vue'),
-      },
-      {
         path: 'products',
         component: () => import('../views/ProductsView.vue'),
+      },
+      {
+        path: 'product/:id', // 單一產品 :動態的參數
+        component: () => import('../views/ProductView.vue'),
       },
       {
         path: 'cart',
