@@ -25,7 +25,6 @@
                 <router-link
                   class="btn my-2 me-2 btn-outline-primary btn-sm"
                   type="button"
-                  :disabled="isLoadingItem === product.id"
                   :to="`/product/${product.id}`"
                 >
                   查看更多
