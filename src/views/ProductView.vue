@@ -22,16 +22,15 @@
 <script setup>
 import axios from 'axios';
 import { ref, onMounted } from 'vue';
-import { useRouter } from 'vue-router';
+// import { useRouter } from 'vue-router';
 
 const { VITE_API, VITE_PATH } = import.meta.env;
-const router = useRouter();
+// const router = useRouter();
 
 const product = ref({});
 
-const getProduct = () => {
-  const { id } = router.params;
-  const url = `${VITE_API}api/${VITE_PATH}/products/${id}`;
+const getProduct = (id) => {
+  const url = `${VITE_API}api/${VITE_PATH}/product/${id}`;
   axios
     .get(url)
     .then((res) => {

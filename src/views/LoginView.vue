@@ -1,41 +1,46 @@
-<!-- eslint-disable no-template-curly-in-string -->
 <template>
-  <h2>登入頁面</h2>
   <div class="container">
-    <div class="row justify-content-center">
-      <h1 class="h3 mb-3 font-weight-normal">請先登入</h1>
-      <div class="col-8">
-        <form id="form" class="form-signin" @submit.prevent="login">
-          <div class="form-floating mb-3">
+    <h2>後台登入頁面</h2>
+    <div class="row">
+      <div class="col-12">
+        <form class="form-signin" @submit.prevent="signIn">
+          <div class="form-floating">
             <input
               type="email"
               class="form-control"
               v-model="user.username"
-              id="username"
-              placeholder="name@example.com"
+              id="floatingInput"
+              placeholder="Password"
               required
-              autofocus
             />
-            <label for="username">Email address</label>
+            <label for="floatingInput">Email address</label>
           </div>
           <div class="form-floating">
             <input
               type="password"
               class="form-control"
               v-model="user.password"
-              id="password"
+              id="floatingPassword"
               placeholder="Password"
               required
             />
-            <label for="password">Password</label>
+            <label for="floatingPassword">Password</label>
           </div>
-          <button class="btn btn-lg btn-primary w-100 mt-3" type="submit">
+          <button
+            class="btn btn-lg btn-primary w-100 mt-3"
+            type="button"
+            @click="login"
+          >
             登入
           </button>
         </form>
       </div>
     </div>
-    <p class="mt-5 mb-3 text-muted">&copy; 2023~∞ - 六角學院</p>
+    <p class="mt-5 mb-3 text-muted">
+      &copy; 2024 - Charlotte Lee<br />
+      vue 第六週主線任務 建立路由表
+      <router-link class="nav-link" to="/">返回首頁</router-link>
+    </p>
   </div>
 </template>
 
