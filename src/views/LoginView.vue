@@ -3,7 +3,7 @@
     <h2>後台登入頁面</h2>
     <div class="row">
       <div class="col-12">
-        <form class="form-signin" @submit.prevent="signIn">
+        <form class="form-signin" @submit.prevent="login">
           <div class="form-floating">
             <input
               type="email"
