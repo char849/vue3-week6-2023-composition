@@ -22,16 +22,16 @@
 <script setup>
 import axios from 'axios';
 import { ref, onMounted } from 'vue';
-import { useRouter } from 'vue-router';
+import { useRoute } from 'vue-router';
 
 const { VITE_API, VITE_PATH } = import.meta.env;
-const router = useRouter();
+const route = useRoute();
 
 const product = ref({});
 
 const getProduct = () => {
 //   console.log('route:', router);
-  const { id } = router.params;
+  const { id } = route.params;
   axios.get(`${VITE_API}api/${VITE_PATH}/product/${id}`).then((res) => {
     // console.log(res.data.product);
     // 將遠端資料取回
