@@ -1,3 +1,4 @@
+<!-- eslint-disable import/extensions -->
 <template>
   <div class="container">
     <h2>產品列表</h2>
@@ -24,6 +25,7 @@
                 <router-link
                   class="btn my-2 me-2 btn-outline-primary btn-sm"
                   type="button"
+                  :disabled="isLoadingItem === product.id"
                   :to="`/product/${product.id}`"
                 >
                   查看更多
@@ -46,9 +48,8 @@ const { VITE_API, VITE_PATH } = import.meta.env;
 const products = ref([]);
 
 const getProducts = () => {
-  const url = `${VITE_API}api/${VITE_PATH}/products`;
   axios
-    .get(url)
+    .get(`${VITE_API}api/${VITE_PATH}/products/all`)
     .then((res) => {
       products.value = res.data.products;
     })
